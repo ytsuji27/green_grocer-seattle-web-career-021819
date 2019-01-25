@@ -15,17 +15,17 @@ require `pry`
 #end
 
 
-def apply_coupons(cart, coupons)
-  coupons_applied_cart = cart
-  coupons.each do |coupon|
-    name = coupon[:item]
-    if name == cart[name] && cart[name][:count] >= coupon[:num]
-      coupons_applied_cart["#{name} W/ COUPON"] = {:price => coupon[:cost], :clearance => cart[name][:clearance], :count => (cart[name][:count]/coupon[:num])}
-      coupons_applied_cart[name][:count] = (cart[name][:count]%coupon[:num])
-    end
-  end
-  coupons_applied_cart
-end
+#def apply_coupons(cart, coupons)
+#  coupons_applied_cart = cart
+#  coupons.each do |coupon|
+#    name = coupon[:item]
+#    if name == cart[name] && cart[name][:count] >= coupon[:num]
+#      coupons_applied_cart["#{name} W/ COUPON"] = {:price => coupon[:cost], :clearance => cart[name][:clearance], :count => (cart[name][:count]/coupon[:num])}
+#      coupons_applied_cart[name][:count] = (cart[name][:count]%coupon[:num])
+#    end
+#  end
+#  coupons_applied_cart
+#end
 
 
 def apply_clearance(cart)
